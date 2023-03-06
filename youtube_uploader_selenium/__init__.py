@@ -236,8 +236,8 @@ class YouTubeUploader:
 		# Check status container and upload progress
 		uploading_status_container = self.browser.find(By.XPATH, Constant.UPLOADING_STATUS_CONTAINER)
 		while uploading_status_container is not None:
-			uploading_progress = uploading_status_container.get_attribute('value')
-			self.logger.debug('Upload video progress: {}%'.format(uploading_progress))
+			uploading_progress = uploading_status_container.get_attribute('innerText')
+			self.logger.debug('Upload video progress: {}'.format(uploading_progress))
 			time.sleep(Constant.USER_WAITING_TIME * 5)
 			uploading_status_container = self.browser.find(By.XPATH, Constant.UPLOADING_STATUS_CONTAINER)
 
