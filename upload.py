@@ -10,6 +10,7 @@ def main(video_path: str,
     uploader = YouTubeUploader(video_path, metadata_path, thumbnail_path, profile_path)
     was_video_uploaded, video_id = uploader.upload()
     assert was_video_uploaded
+    print('Video ID: {}'.format(video_id))
 
 
 if __name__ == "__main__":
