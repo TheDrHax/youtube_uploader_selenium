@@ -41,6 +41,9 @@ class Constant:
     PL_CREATE_BUTTON_CLASS = 'create-playlist-button'
     PL_DONE_BUTTON_CLASS = 'done-button'
 
+    # Public
+    VIDEO_PUBLIC = 'public'
+
     #Schedule
     VIDEO_SCHEDULE = 'schedule'
     SCHEDULE_CONTAINER_ID = 'schedule-radio-button'

@@ -212,6 +212,7 @@ class YouTubeUploader:
 		self.logger.debug('Clicked {} three'.format(Constant.NEXT_BUTTON))
 
 		schedule = self.metadata_dict[Constant.VIDEO_SCHEDULE]
+		public = self.metadata_dict[Constant.VIDEO_PUBLIC]
 		if schedule:
 			upload_time_object = datetime.strptime(schedule, "%m/%d/%Y, %H:%M")
 			self.browser.find(By.ID, Constant.SCHEDULE_CONTAINER_ID).click()
@@ -226,7 +227,7 @@ class YouTubeUploader:
 				datetime.strftime(upload_time_object, "%H:%M"))
 			self.browser.find(By.XPATH, Constant.SCHEDULE_TIME).send_keys(Keys.ENTER)
 			self.logger.debug(f"Scheduled the video for {schedule}")
-		else:
+		elif public:
 			public_main_button = self.browser.find(By.NAME, Constant.PUBLIC_BUTTON)
 			self.browser.find(By.ID, Constant.RADIO_LABEL, public_main_button).click()
 			self.logger.debug('Made the video {}'.format(Constant.PUBLIC_BUTTON))
